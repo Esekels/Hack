@@ -1,17 +1,13 @@
-import React, { useState } from "react"
-export default function Accueil() {
-    const [hello, setHello] = useState("")
-    const handleClick = async () => {
-        const data = await window.fetch('/api/bonjour')
-        const json = await data.json()
-        console.log(json)
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-        setHello(json["msg"])
-    }
+export default function Accueil() {
     return (
-        <div>
-            <p>{hello}</p>
-            <button onClick={handleClick}>cliquer ici</button>
+        <div className="acceuil">
+            <h1>Hello world</h1>
+            <h2>
+                <small className="text-muted">With faded secondary text</small>
+            </h2>
         </div>
     )
 }
